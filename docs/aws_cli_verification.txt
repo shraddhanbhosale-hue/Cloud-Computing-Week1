@@ -1,0 +1,16 @@
+AWS CLI Configuration Verification
+
+AWS CLI was configured using the IAM Admin user: shraddha-admin.
+
+Command:
+aws sts get-caller-identity
+
+Output:
+{
+    "UserId": "<REDACTED>",
+    "Account": "<REDACTED>",
+    "Arn": "arn:aws:iam::051602877292:user/shraddha-admin"
+}
+
+Result:
+AWS CLI access was successfully verified using the IAM Admin user.
