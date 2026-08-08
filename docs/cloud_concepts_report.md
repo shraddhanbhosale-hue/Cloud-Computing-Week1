@@ -241,9 +241,7 @@ For this task, an IAM administrative user named `shraddha-admin` was created for
 * Grant only the permissions required for a specific task whenever possible.
 * Protect AWS access keys and never publish them in a public repository.
 
-## Billing Budget and Cost Monitgive mi simple and short with answers
-
-## oring
+## Billing Budget and Cost Monitoring
 
 An AWS budget named `My Zero-Spend Budget` was configured to monitor AWS spending.
 
