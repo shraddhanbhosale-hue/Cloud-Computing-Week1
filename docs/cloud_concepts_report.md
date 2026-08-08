@@ -1,212 +1,128 @@
 # Cloud Computing Concepts and AWS Services Report
 
-## 1. Introduction to Cloud Computing
+## 1. What is Cloud Computing?
 
-Cloud computing is the delivery of computing resources such as servers, storage, databases, networking, and software through the internet. It allows users to access IT resources without owning physical hardware.
+Cloud computing means using computing resources like servers, storage, databases, and networking through the internet.
 
-Cloud providers offer resources on a pay-as-you-go basis, which helps organizations reduce cost and improve scalability.
+### Advantages
 
-Major cloud providers:
-- Amazon Web Services (AWS)
-- Microsoft Azure
-- Google Cloud Platform (GCP)
+* Low cost
+* Easy scalability
+* Fast deployment
+* High availability
 
-### Advantages of Cloud Computing
-- Cost reduction
-- Scalability
-- High availability
-- Flexibility
-- Faster deployment
+---
 
+## 2. Cloud Deployment Models
 
-# 2. Cloud Deployment Models
+### Public Cloud
 
-## Public Cloud
+Cloud resources are provided by a third-party provider and shared by many customers.
 
-Public cloud is a cloud model where resources are owned and managed by third-party cloud providers and are available to multiple customers over the internet.
+**Examples:** AWS, Azure, Google Cloud
 
-Examples:
-- AWS
-- Microsoft Azure
-- Google Cloud
+### Private Cloud
 
-Advantages:
-- Low initial cost
-- Easy scalability
-- No hardware maintenance
+Cloud infrastructure is used by only one organization.
 
-Disadvantages:
-- Less control over infrastructure
-- Security concerns for sensitive data
+**Example:** Company private data center
 
+### Hybrid Cloud
 
-## Private Cloud
+Combination of public and private cloud.
 
-Private cloud is a cloud environment dedicated to only one organization. The organization has complete control over its infrastructure and resources.
+**Example:** Sensitive data in private cloud and website on AWS.
 
-Examples:
-- Company private data centers
-- VMware private cloud
+---
 
-Advantages:
-- Better security
-- More control
-- Customization
+## 3. Cloud Service Models
 
-Disadvantages:
-- Expensive setup
-- Requires maintenance
+### IaaS – Infrastructure as a Service
 
+Provides virtual servers, storage, and networking.
 
-## Hybrid Cloud
+**Example:** Amazon EC2
 
-Hybrid cloud combines both public and private cloud environments. It allows organizations to keep sensitive data in a private cloud while using public cloud resources for other applications.
+### PaaS – Platform as a Service
 
-Advantages:
-- Flexible infrastructure
-- Better security
-- Cost optimization
+Provides a platform to develop and deploy applications without managing servers.
 
-Example:
-A company can store confidential customer information in a private cloud and host its website on AWS public cloud.
+**Example:** AWS Elastic Beanstalk, Google App Engine
 
+### SaaS – Software as a Service
 
-# 3. Cloud Service Models
+Provides ready-to-use software through the internet.
 
-## Infrastructure as a Service (IaaS)
+**Examples:** Gmail, Microsoft 365
 
-IaaS provides virtualized computing resources such as servers, storage, and networking over the internet.
+---
 
-The cloud provider manages:
-- Physical hardware
-- Networking
-- Data centers
+## 4. Core AWS Services
 
-The user manages:
-- Operating system
-- Applications
-- Data
+### Amazon EC2
 
-Examples:
-- Amazon EC2
-- Microsoft Azure Virtual Machines
-- Google Compute Engine
+Provides virtual servers to run applications.
 
+**Uses:** Website hosting, application deployment
 
-## Platform as a Service (PaaS)
+### Amazon S3
 
-PaaS provides a platform that allows developers to build, test, and deploy applications without managing the underlying infrastructure.
+Provides object storage for storing files and data.
 
-The provider manages:
-- Servers
-- Operating system
-- Runtime environment
+**Uses:** Backup, file storage, static websites
 
-The user manages:
-- Application code
-- Data
+### Amazon VPC
 
-Examples:
-- AWS Elastic Beanstalk
-- Google App Engine
-- Heroku
+Provides a private and isolated network in AWS.
 
+**Uses:** Network security and application hosting
 
-## Software as a Service (SaaS)
+### Amazon RDS
 
-SaaS provides ready-to-use software applications through the internet.
+Provides managed relational databases.
 
-Users do not manage infrastructure; they only use the application.
+**Examples:** MySQL, PostgreSQL, Oracle
 
-Examples:
-- Gmail
-- Microsoft 365
-- Salesforce
+---
 
+## 5. AWS Security Configuration
 
-# 4. Core AWS Services
+### MFA
 
-## Amazon EC2 (Elastic Compute Cloud)
+MFA provides an additional security layer. MFA was enabled for the AWS Root user using an authenticator app.
 
-Amazon EC2 is a cloud service that provides virtual servers to run applications.
+### IAM
 
-Features:
-- Resizable computing capacity
-- Multiple operating system choices
-- Scalable resources
-- Pay-as-you-go pricing
+IAM manages AWS users and permissions.
 
-Uses:
-- Website hosting
-- Application deployment
-- Software testing
+An IAM admin user named `shraddha-admin` was created for regular AWS activities.
 
+### Billing Budget
 
-## Amazon S3 (Simple Storage Service)
+A budget named `My Zero-Spend Budget` was created with a limit of **$1.00** to monitor AWS costs.
 
-Amazon S3 is an object storage service used to store and retrieve data from anywhere.
+---
 
-Features:
-- Highly durable storage
-- Unlimited scalability
-- Secure data storage
+## 6. AWS CLI Verification
 
-Uses:
-- Backup storage
-- File storage
-- Static website hosting
+AWS CLI was configured using the IAM admin user.
 
+Command used:
 
-## Amazon VPC (Virtual Private Cloud)
+```bash
+aws sts get-caller-identity
+```
 
-Amazon VPC allows users to create a private and isolated network environment inside AWS.
+The command successfully verified access using the `shraddha-admin` IAM user.
 
-Features:
-- Create subnets
-- Configure IP addresses
-- Control network access
-- Use security groups
+The output is saved in:
 
-Uses:
-- Secure application hosting
-- Network management
+`docs/aws_cli_verification.txt`
 
+---
 
-## Amazon RDS (Relational Database Service)
+## 7. Conclusion
 
-Amazon RDS is a managed database service that makes it easy to set up and operate relational databases.
+In this task, I learned the basics of cloud computing, deployment models, service models, and important AWS services.
 
-Supported databases:
-- MySQL
-- PostgreSQL
-- Oracle
-- SQL Server
-
-Features:
-- Automated backups
-- High availability
-- Database scaling
-
-
-# 5. AWS Security Configuration
-
-## Multi-Factor Authentication (MFA)
-
-MFA provides an additional security layer by requiring verification through another device along with the password.
-
-## IAM (Identity and Access Management)
-
-IAM allows users to manage access permissions for AWS resources.
-
-Best practice:
-- Do not use the root account for daily activities.
-- Use IAM users with required permissions.
-
-## Billing Alarm
-
-Billing alarms help monitor AWS spending and notify users when costs exceed a selected limit.
-
-
-# Conclusion
-
-This task helped me understand cloud computing fundamentals, cloud deployment models, cloud service models, AWS core services, and AWS security best practices.
+I also configured **MFA, IAM, AWS Budget, and AWS CLI** to create a more secure AWS environment.
